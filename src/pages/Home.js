@@ -1,57 +1,59 @@
-import { useContext, useEffect, useState , usrState} from "react";
+import { useContext, useEffect, useState, usrState } from "react";
 import { DiaryStateContext } from "../App";
 
-import MyHeader from"./../components/MyHeader";
+import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
 import DiaryList from "./../components/DiaryList";
 
-const Home=()=>{
-    const diaryList = useContext(DiaryStateContext);
-    
-    const [data, setData] = useState([]);
-    const [curDate, setCurDate] = useState(new Date());
-    const headText = `${curDate.getFullYear()}년 ${curDate.getMonth()+1}월`;
+const Home = () => {
+  const diaryList = useContext(DiaryStateContext);
 
-    useEffect(()=>{
-        if(diaryList.length >= 1){
-        const firstDay = new Date(
-            curDate.getFullYear(),
-            curDate.getMonth(),
-            1
-            ).getTime();
+  const [data, setData] = useState([]);
+  const [curDate, setCurDate] = useState(new Date());
+  const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
-        const lastDay = new Date(
-            curDate.getFullYear(),
-            curDate.getMonth()+1,
-            0
-        ).getTime();
+  useEffect(() => {
+    if (diaryList.length >= 1) {
+      const firstDay = new Date(
+        curDate.getFullYear(),
+        curDate.getMonth(),
+        1
+      ).getTime();
 
-        setData(diaryList.filter((it)=>firstDay <=it.date && it.date <=lastDay));
-        }
-        },[diaryList, curDate]);
+      const lastDay = new Date(
+        curDate.getFullYear(),
+        curDate.getMonth() + 1,
+        0
+      ).getTime();
 
-        useEffect(()=>{
-            console.log(data);
-        },[data])
+      setData(
+        diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay)
+      );
+    }
+  }, [diaryList, curDate]);
 
-    const increaseMonth = ()=>{
-        setCurDate(new Date(curDate.getFullYear(), curDate.getMonth()+1, curDate.getDate()));
-    };
+  useEffect(() => {}, [data]);
 
-    const decreaseMonth = ()=>{
-        setCurDate(
-            new Date(curDate.getFullYear(), curDate.getMonth()-1, curDate.getDate())
-            );
-    };
-    return (
+  const increaseMonth = () => {
+    setCurDate(
+      new Date(curDate.getFullYear(), curDate.getMonth() + 1, curDate.getDate())
+    );
+  };
+
+  const decreaseMonth = () => {
+    setCurDate(
+      new Date(curDate.getFullYear(), curDate.getMonth() - 1, curDate.getDate())
+    );
+  };
+  return (
     <div>
-        <MyHeader 
+      <MyHeader
         headText={headText}
         leftChild={<MyButton text={"<"} onClick={decreaseMonth} />}
-        rightChild={<MyButton text={">"} onClick={increaseMonth}/>}
-        />
-        <DiaryList diaryList={data}/>
+        rightChild={<MyButton text={">"} onClick={increaseMonth} />}
+      />
+      <DiaryList diaryList={data} />
     </div>
-    );
+  );
 };
 export default Home;
