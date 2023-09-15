@@ -26,7 +26,7 @@ const reducer = (state, action) => {
     }
     case "EDIT": {
       newState = state.map((it) =>
-        it.id === action.data ? { ...action.data } : it
+        it.id === action.data.id ? { ...action.data } : it
       );
       break;
     }
@@ -78,12 +78,12 @@ function App() {
 
   //create
   const dataId = useRef(0);
-  const onCreate = (date, content, emotion) => {
+  const onCreate = (targetId, date, content, emotion) => {
     dispatch({
       type: "CREATE",
       data: {
         id: dataId.current,
-        data: new Date(date).getTime(),
+        date: new Date(date).getTime(),
         content,
         emotion,
       },
@@ -114,7 +114,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/new" element={<New />}></Route>
-              <Route path="/edit" element={<Edit />}></Route>
+              <Route path="/edit/:id" element={<Edit />}></Route>
               <Route path="/diary/:id" element={<Diary />}></Route>
             </Routes>
           </div>
