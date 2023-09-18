@@ -7,8 +7,8 @@ import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 
 //components
-import MyButton from "./components/MyButton";
-import MyHeader from "./components/MyHeader";
+// import MyButton from "./components/MyButton";
+// import MyHeader from "./components/MyHeader";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -77,8 +77,8 @@ function App() {
   // console.log(new Date().getTime());
 
   //create
-  const dataId = useRef(0);
-  const onCreate = (targetId, date, content, emotion) => {
+  const dataId = useRef(6);
+  const onCreate = (date, content, emotion) => {
     dispatch({
       type: "CREATE",
       data: {
