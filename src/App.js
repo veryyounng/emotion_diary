@@ -41,7 +41,7 @@ export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
 function App() {
-  // console.log(new Date().getTime());
+  const [data, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {
     const localData = localStorage.getItem("diary");
