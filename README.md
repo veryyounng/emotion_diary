@@ -119,7 +119,7 @@ MyButton.defaultProps = {
           }
         />
 ```
-### 컴포넌트 트리리
+### 컴포넌트 트리
 <br><img src="https://github.com/veryyounng/react_project/assets/121228672/a0131cd3-6292-49bb-bb5d-af8baf5354da"/>
 ```javascript
 <DiaryStateContext.Provider value={data}>
