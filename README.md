@@ -32,11 +32,11 @@ localStorage를 이용하여 CRUD를 구현하였고 새로고침을 하여도 �
    <br><br>
 6. 일기 리스트에서 시간순으로 조회가 가능하고 좋은 감정, 안좋은 감정, 감정 전부다로 조회가 가능하다.
    <br><img src= "https://github.com/veryyounng/react_project/assets/121228672/683793d9-83c9-48e7-9628-95118a50768a"/>
-   ▶️ (감정 전부다 예시)<br><br>
+   <br>▶️ (감정 전부다 예시)<br><br>
    <br><img src="https://github.com/veryyounng/react_project/assets/121228672/d6c907a9-6be0-4b88-aaa2-a4a0684133a6"/>
-   ▶️ (좋은 감정만 예시)<br><br>
+   <br>▶️ (좋은 감정만 예시)<br><br>
    <br><img src="https://github.com/veryyounng/react_project/assets/121228672/d4a35844-ba9e-4584-b939-9b19db656636"/>
-   ▶️ (안좋은 감정만 예시)<br><br>
+   <br>▶️ (안좋은 감정만 예시)<br><br>
 
 
 
