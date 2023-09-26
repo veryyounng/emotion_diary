@@ -32,11 +32,11 @@ localStorage를 이용하여 CRUD를 구현하였고 새로고침을 하여도 �
    <br><br>
 6. 일기 리스트에서 시간순으로 조회가 가능하고 좋은 감정, 안좋은 감정, 감정 전부다로 조회가 가능하다.
    <br><img src= "https://github.com/veryyounng/react_project/assets/121228672/683793d9-83c9-48e7-9628-95118a50768a"/>
-   (감정 전부다 예시)<br><br>
+   ▶️ (감정 전부다 예시)<br><br>
    <br><img src="https://github.com/veryyounng/react_project/assets/121228672/d6c907a9-6be0-4b88-aaa2-a4a0684133a6"/>
-   (좋은 감정만 예시)<br><br>
+   ▶️ (좋은 감정만 예시)<br><br>
    <br><img src="https://github.com/veryyounng/react_project/assets/121228672/d4a35844-ba9e-4584-b939-9b19db656636"/>
-   (안좋은 감정만 예시)<br><br>
+   ▶️ (안좋은 감정만 예시)<br><br>
 
 
 
@@ -295,7 +295,7 @@ const { onCreate, onEdit, onRemove } = useContext(DiaryDispatchContext);
 ## 최적화시키기
 1. Home에서 월 변경시 하단 ControlMenu가 리랜더링됨<br>
 - 부모 컴포넌트(Home)가 리랜더링되면서 자식요소도 리랜더링되는 것<br>
--> ControlMenu컴포넌트를 React.Memo로 사용하여 해결함<br>
+▶️ ControlMenu컴포넌트를 React.Memo로 사용하여 해결함<br>
 ```javascript
 const ControlMenu = React.memo(({ value, onChange, optionList }) => {
   return (
@@ -316,8 +316,8 @@ const ControlMenu = React.memo(({ value, onChange, optionList }) => {
 
 2. 일기 리스트 필터 변경시 리랜더링 발생
 - 부모컴포넌트(DiaryList)의 필터 변경시 state 변경, 업데이트되면서 자식 컴포넌트(DiaryItem) 리랜더링되는 것 <br>
--> React.Memo를 사용하였지만 리랜더링 아직도 발생함, 전달받은 요소중에 함수가 있기 때문 (onClick)<br>
--> onClick함수를 콜백함수로 전달하여 해결하였다.<br>
+▶️ React.Memo를 사용하였지만 리랜더링 아직도 발생함, 전달받은 요소중에 함수가 있기 때문 (onClick)<br>
+▶️ onClick함수를 콜백함수로 전달하여 해결하였다.<br>
 ```javascript
 const handleClickEmote = useCallback((emotion) => {
     setEmotion(emotion);
